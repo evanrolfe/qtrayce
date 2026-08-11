@@ -125,7 +125,7 @@ Future<void> test(WidgetTester tester, Database db) async {
   // Assert that the client will make a POST request to /
   expect(sentRequest!.method, 'POST');
   expect(sentRequest!.headers['X-Auth-Token'], '1234abcd');
-  expect(sentRequest!.headers['Content-Type'], 'application/json; charset=utf-8');
+  expect(sentRequest!.headers['Content-Type'], 'application/json');
   expect(normalizeJson(sentRequestBody!), '{"hello":"world"}');
 
   final responseEditor = tester.widget<MultiLineCodeEditor>(find.byType(MultiLineCodeEditor).last);
