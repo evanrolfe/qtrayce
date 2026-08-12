@@ -10,7 +10,7 @@ void setupNodeJs(Config config, {bool force = false}) async {
 
     if (await nodejsDir.exists()) {
       print("NodeJS directory: ${nodejsDir.path}");
-      if (force) nodejsDir.delete(recursive: true);
+      if (force) await nodejsDir.delete(recursive: true);
     }
 
     await nodejsDir.create(recursive: true);
