@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'trayce'
-    s.version          = '1.8.1'
+    s.version          = '1.8.2'
     s.summary          = 'Trayce macOS FFI plugin'
     s.description      = <<-DESC
     A Flutter plugin that uses FFI for macOS.

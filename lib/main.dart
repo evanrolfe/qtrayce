@@ -25,7 +25,7 @@ import 'agent/server.dart';
 import 'network/repo/containers_repo.dart';
 import 'network/repo/flow_repo.dart';
 
-const String appVersion = '1.8.1';
+const String appVersion = '1.8.2';
 
 void main(List<String> args) async {
   // Check for --version flag
@@ -81,13 +81,23 @@ void main(List<String> args) async {
         RepositoryProvider<EventBus>(create: (context) => eventBus),
         RepositoryProvider<ContainersRepo>(create: (context) => containersRepo),
         RepositoryProvider<CollectionRepo>(create: (context) => collectionRepo),
-        RepositoryProvider<EnvironmentRepo>(create: (context) => environmentRepo),
-        RepositoryProvider<GlobalEnvironmentRepo>(create: (context) => globalEnvironmentRepo),
+        RepositoryProvider<EnvironmentRepo>(
+          create: (context) => environmentRepo,
+        ),
+        RepositoryProvider<GlobalEnvironmentRepo>(
+          create: (context) => globalEnvironmentRepo,
+        ),
         RepositoryProvider<FolderRepo>(create: (context) => folderRepo),
         RepositoryProvider<RequestRepo>(create: (context) => requestRepo),
-        RepositoryProvider<RuntimeVarsRepo>(create: (context) => runtimeVarsRepo),
-        RepositoryProvider<ExplorerService>(create: (context) => explorerService),
-        RepositoryProvider<TrayceAgentService>(create: (context) => grpcService),
+        RepositoryProvider<RuntimeVarsRepo>(
+          create: (context) => runtimeVarsRepo,
+        ),
+        RepositoryProvider<ExplorerService>(
+          create: (context) => explorerService,
+        ),
+        RepositoryProvider<TrayceAgentService>(
+          create: (context) => grpcService,
+        ),
       ],
       child: const App(appVersion: appVersion),
     ),
